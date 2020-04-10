@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="fluidcontainer"> -->
 	<div *ngIf='profile'>
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -29,13 +29,13 @@
 						<span class="label" class="btn btn-primary"> {{profile.public_repos}} Repositories</span>
 					</div>
 					<p>
-						<a href="{{profile.html_url}}" target="_blank" class=" view  btn btn-succes">Explore profile on github</a>
+						<a href="{{profile.html_url}}" target="_blank" class="btn btn-succes btn-sm">Explore profile on github</a>
 				</p>
 				</div>
 			</div>
 		</div>
-		<h1>Repositories.</h1>
-<div class="row">
+		<h4>Repositories.</h4>
+	<div class="row">
 	<div class="col-md-12">
 		<div class=" col-sm-10card-columns">
 			<div class="card" *ngFor="let repo of repos">
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+	</div>
     
   </div>
-</div>
+<!-- </div> -->
