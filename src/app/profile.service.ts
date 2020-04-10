@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
 // import 'rxjs/add/operator/map';
 @Injectable({
   providedIn: 'root'
@@ -21,4 +20,7 @@ export class ProfileService {
   getProfileData(){
     return this.http.get("https://api.github.com/users/" + this.username+ "?client_id="+ this.clientid + "&client_secret=" + this.clientsecret);
   }
+  // getUserRepo(){
+  //   return this.http.get("https://api.github.com/users/" + this.username+ "/repos?client_id="+ this.clientid + "&client_secret=" + this.clientsecret);
+  // }
 }

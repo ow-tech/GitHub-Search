@@ -1,4 +1,4 @@
-<!-- <div class="fluidcontainer"> -->
+<div class="container-fluid">
 	<div *ngIf='profile'>
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -8,18 +8,19 @@
       </div>
       <div class="panel-body">
 				<div class="row">
-					<div class="col-sm-3">
+					<div class="col-md-3">
 						<img src="{{profile.avatar_url}}" class="img-circle img-responsive">
+						<p>
+							<a href="{{profile.html_url}}" target="_blank" class="btn btn-succes btn-sm">Explore profile on github</a>
+						</p>
 					</div>
-					<div class="col-sm-5">
+					<div class="col-md-5">
 						<ul class="list-group">
 							<li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
 							<li class="list-group-item" *ngIf="profile.blog">{{profile.blog}}</li>
-							<!-- <li class="list-group-item" *ngIf="hireable">{{profile.hireable}}</li>
-							<li class="list-group-item" *ngIf="email">{{profile.email}}</li> -->
 						</ul>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-md-4">
 						<span class="label" class="btn btn-success"> {{profile.followers}} Followers</span>&nbsp;
 
 						<span class="label" class="btn btn-info"> {{profile.following}} Following </span>&nbsp;
@@ -28,37 +29,20 @@
 
 						<span class="label" class="btn btn-primary"> {{profile.public_repos}} Repositories</span>
 					</div>
-					<p>
-						<a href="{{profile.html_url}}" target="_blank" class="btn btn-succes btn-sm">Explore profile on github</a>
-				</p>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-tittle">Repositories</h3>
+					</div>
+					<div class="panel-body" *ngFor="let repos of repos">
+						<p>
+							{{repos.name}}<a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">see this project in GitHub</a>
+						</p>
+						<p>{{repos.description}}</p>
+
+					</div>
 				</div>
 			</div>
 		</div>
-		<h4>Repositories.</h4>
-	<div class="row">
-	<div class="col-md-12">
-		<div class=" col-sm-10card-columns">
-			<div class="card" *ngFor="let repo of repos">
-				<div class="card">
-					<a href="{{repos.html_url}}" class="text-align-center" target="_blank"
-						class="view btn btn-outline-success">View this project on github</a>
-						<br>
-						<br>
-						<div class=" text-center">
-							<h2 id="rname">{{repos.name}}</h2>
-						</div>
-						<div class="card-body">
-							<p id="dec">
-								{{repos.description}}
-							</p>
-						</div>
-						<div>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-    
-  </div>
-<!-- </div> -->
+	</div> 
+</div>
