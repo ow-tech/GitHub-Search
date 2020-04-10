@@ -17,4 +17,9 @@ export class ProfileService {
     // defining the user name.(everytime, landing page will display my profile)
     this.username= "ow-tech";
   }
+
+  getProfileData(){
+    return this.http.get("https://api.github.com/users/" + this.username+ "?client_id="+ this.clientid + "&client_secret=" + this.clientsecret)
+    .map(res=>res.jason());
+  }
 }
