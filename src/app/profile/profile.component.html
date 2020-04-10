@@ -11,6 +11,23 @@
 					<div class="col-sm-3">
 						<img src="{{profile.avatar_url}}" class="img-circle img-responsive">
 					</div>
+					<div class="col-sm-5">
+						<ul class="list-group">
+							<li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+							<li class="list-group-item" *ngIf="profile.blog">{{profile.blog}}</li>
+							<!-- <li class="list-group-item" *ngIf="hireable">{{profile.hireable}}</li>
+							<li class="list-group-item" *ngIf="email">{{profile.email}}</li> -->
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<span class="label" class="btn btn-success"> {{profile.followers}} Followers</span>&nbsp;
+
+						<span class="label" class="btn btn-info"> {{profile.following}} Following </span>&nbsp;
+
+						<span class="label" class="btn btn-secondary"> {{profile.public_gists}} gists</span>&nbsp;
+
+						<span class="label" class="btn btn-primary"> {{profile.public_repos}} Repositories</span>
+					</div>
 				</div>
 
 			</div>
