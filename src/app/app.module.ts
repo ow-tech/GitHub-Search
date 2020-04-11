@@ -11,12 +11,14 @@ import { AppComponent } from './app.component';
 // import { ProfileComponent } from './profile/profile.component';
 import {ProfileComponent} from './profile/profile.component';
 import { DurationPipe } from './duration.pipe';
+import { ItalicsDirective } from './italics.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    DurationPipe
+    DurationPipe,
+    ItalicsDirective
   ],
   imports: [
     BrowserModule,
