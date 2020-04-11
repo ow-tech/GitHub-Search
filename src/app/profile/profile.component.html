@@ -1,26 +1,33 @@
 <div class="container-fluid">
-	<form action="" class="enter">
-        <div class="form-group">
-            <input type="text" placeholder="enter username here...." class="form-control"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
-        
-        </div>
-    </form>
+	<h1>GITHUB<img class="image"src="https://bit.ly/36cBAK2">SEARCH </h1>
+	<div class="row">
+		<div class="col-sm-3" id="center">
+			<form action="" class="enter">
+				<div class="form-group">
+					<input type="text" placeholder="enter username here...." class="form-control"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
+				
+				</div>
+			</form>
+
+		</div>
+
+	</div>
 	<div *ngIf='profile'>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-        {{profile.name}}<p>{{profile.login}}</p>
-        <br>
-      	<span *ngIf="profile">Works at {{profile.company}}</span> 
-      </div>
-      <div class="panel-body">
+		<div class="card">
+			<div class="card-tittle">
+        		{{profile.name}}<p>{{profile.login}}</p>
+        			<br>
+      			<span *ngIf="profile">Works at {{profile.company}}</span> 
+      		</div>
+      		<div class="card-body">
 				<div class="row">
 					<div class="col-md-3">
-						<img src="{{profile.avatar_url}}" class="img-circle img-responsive">
+						<img src="{{profile.avatar_url}}" class="img">
 						<p>
 							<a href="{{profile.html_url}}" target="_blank" class="btn btn-succes btn-sm">Explore profile on github</a>
 						</p>
 					</div>
-					<div class="col-md-5">
+					<div class="col-md-4">
 						<ul class="list-group">
 							<li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
 							<li class="list-group-item" *ngIf="profile.blog">{{profile.blog}}</li>
@@ -28,7 +35,7 @@
 							<li class="list-group-item"*ngIf="profile.hireable">{{profile.hireable}}</li>
 						</ul>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<span class="label" class="btn btn-success"> {{profile.followers}} Followers</span>&nbsp;
 
 						<span class="label" class="btn btn-info"> {{profile.following}} Following </span>&nbsp;
@@ -38,19 +45,19 @@
 						<span class="label" class="btn btn-primary"> {{profile.public_repos}} Repositories</span>
 					</div>
 				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-tittle">Repositories</h3>
-					</div>
-					<div class="panel-body" *ngFor="let repos of repos">
+				<div class="panel-heading">
+					<h3>Repositories</h3>
+				</div>
+				<div class="card">
+					<div class="card-tittle">
 						<p>
-							{{repos.name}}<a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">see this project in GitHub</a>
+							{{repos.name}}
 						</p>
-						<p>{{repos.description}}</p>
+					</div>
+					<div class="card-body" *ngFor="let repos of repos">
+						<p>{{repos.description}}<a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">see this project in GitHub</a></p>
 						<!-- <P>{{repos.created_at|date|duration}}</P> -->
 						<p appItalics>{{repos.created_at|duration}}</p>
-
-
 					</div>
 				</div>
 			</div>
