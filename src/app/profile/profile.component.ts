@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileService} from '../profile.service';
-import {RepositoryService} from '../repository.service';
+// import {RepositoryService} from '../repository.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -13,12 +13,12 @@ export class ProfileComponent implements OnInit {
 
 
 
-  constructor(private profileService:ProfileService, private repositoryService:RepositoryService) {
+  constructor(private profileService:ProfileService) {
     this.profileService.getProfileData().subscribe(profile=>{
       console.log(profile);
       this.profile=profile;
     });
-    this.repositoryService.getUserRepo().subscribe(repos =>{
+    this.profileService.getUserRepo().subscribe(repos =>{
       console.log(repos);
 
       this.repos=repos;
