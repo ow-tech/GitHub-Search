@@ -15,7 +15,7 @@
 	<div *ngIf='profile'>
 		<div class="card">
 			<div class="card-tittle">
-        		{{profile.name}}<p>{{profile.login}}</p>
+        		<h4>User Name:</h4>{{profile.name}}<p>{{profile.login}}</p>
         			<br>
       			<span *ngIf="profile">Works at {{profile.company}}</span> 
       		</div>
@@ -55,7 +55,7 @@
 						</p>
 					</div>
 					<div class="card-body" *ngFor="let repos of repos">
-						<p>{{repos.description}}<a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">see this project in GitHub</a></p>
+						<p>{{repos.description}}<br><a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">see this project in GitHub</a></p>
 						<!-- <P>{{repos.created_at|date|duration}}</P> -->
 						<p appItalics>{{repos.created_at|duration}}</p>
 					</div>
