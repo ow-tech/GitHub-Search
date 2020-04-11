@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ProfileService} from './profile.service';
+import { FormsModule } from '@angular/forms';
 // import { RepositoryService } from './repository.service';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
@@ -23,6 +24,7 @@ import { ItalicsDirective } from './italics.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule
