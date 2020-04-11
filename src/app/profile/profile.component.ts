@@ -9,7 +9,7 @@ import {ProfileService} from '../profile.service';
 export class ProfileComponent implements OnInit {
   profile:any;
   repos:any;
-  user:string;
+  username:string;
 
 
 
@@ -23,6 +23,9 @@ export class ProfileComponent implements OnInit {
 
       this.repos=repos;
     })
+    findProfile(){
+      this.profileService.updateProfile(this.username)
+    }
    }
 
   ngOnInit(){
