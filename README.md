@@ -2,9 +2,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Author
+- Alex Mulwa Barasa
+
+
+## Description
+
+- The website basically works in a way that you can search you Github account and get to explore and get to view your account in Github.
+ The project basically uses the github API to collect information that are required.Whe you ether the github name you will see the profile. 
+
+ ## Technologies Used
+- This project was generated with Angular CLI version 7.1.4.
+- HTML & CSS (Bootstrap)
+
+
+## Development server
+## Setup Instructions and Installation
+- Clone this repository to a location in your file system.
+- Open terminal command line then navigate to the root folder of the application.
+- Run ng serve command.
+- Navigate to http://localhost:4600/ in your browser.
+
+## BDD
+
+<img src="src/assets/gitsearch.png">
+
+ 1. Displays GitHub info of a user when user name is entered
+   - INPUT: "user name entered"
+   - OUTPUT: "Displays User Details"
+ 2. After searching the Github account you get to see the github profile and the you can explore more to see the github account.
+
+ 3. At the landing page you can also see the number of followers you have and the people you are following.
 
 ## Code scaffolding
 
@@ -25,3 +54,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Contacts
+Email:alexbarasa0723@gmail.com
+
+## license
+[MIT License](https://ow-tech.github.io/Gitsearch/blob/master/LICENSE) [ow-tech](https://github.com/ow-tech). 
