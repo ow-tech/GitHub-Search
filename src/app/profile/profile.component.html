@@ -24,7 +24,7 @@
 					<div class="col-md-3">
 						<img src="{{profile.avatar_url}}" class="img">
 						<p>
-							<a href="{{profile.html_url}}" target="_blank" class="btn btn-succes btn-sm">Explore profile on github</a>
+							<a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">Explore profile on github</a>
 						</p>
 					</div>
 					<div class="col-md-4">
@@ -45,21 +45,20 @@
 						<span class="label" class="btn btn-primary"> {{profile.public_repos}} Repositories</span>
 					</div>
 				</div>
-				<div class="panel-heading">
-					<h3>Repositories</h3>
-				</div>
-				<div class="card">
-					<div class="card-title">
-						<p>
-							{{repos.name}}
-						</p>
-					</div>
-					<div class="card-body" *ngFor="let repos of repos">
-						<div class="card-text">
-							<p>{{repos.description}}<br><a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">see this project in GitHub</a></p>
-						<!-- <P>{{repos.created_at|date|duration}}</P> -->
-						<p appItalics>{{repos.created_at|duration}}</p>
+		<div>
+			<h3>Repositories</h3>
+		</div>
+		<div class="container myrepos">
+			<div class="card" appHighlight *ngFor="let repos of repos" style="width: 22rem;" class="repo">
+				<div class="card-body">
+					<h5 class="card-title">Repo Name: &nbsp;{{repos.name}} </h5>
+					<div class="card-text">
+						<hr>
+						<div class="desc"><span class="description">Description:</span> &nbsp;{{repos.description}} 
+							<p><a href="{{repos.html_url}}" class="btn btn-sm btn-warning" target="">See this project in GitHub</a></p>
 						</div>
+						<hr>
+						<div class="card-subtitle mb-2"><span class="description" appItalics >Created :</span> &nbsp;{{repos.created_at | duration}}.</div>
 					</div>
 				</div>
 			</div>
